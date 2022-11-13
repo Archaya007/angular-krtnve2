@@ -1,0 +1,261 @@
+<head>
+<meta charset="UTF-8">
+</head>
+<body style="background-color:rgb(17, 158, 201)">
+  <img class="bg" [src]="myImage" />
+  <img class="bg" [src]="myImage" />
+  <img class="bg" [src]="myImage" />
+  <img class="bg" [src]="myImage" />
+  <br />
+  <h3>
+    <b
+      ><a
+        style="color:red;"
+        href="https://www.answerroot.com/web?q=Indigo+Book+Search&qo=relatedSearchNarrow&o=1670878&l=dir&ag=fw4&an=google_s&ad=semA&rch=ch788&ueid=c6ef4b8f-803c-4599-acb3-01bf01561861&askid=500233792242"
+        >Home</a
+      ></b
+      >
+  </h3>
+  <b
+    ><marquee style="color:red"
+      >NEW OFFER PACKAGE ABOVE 50,000 WITH INSURANCE!!!</marquee
+    ></b
+  >
+ 
+  <div class="header" style="text-align:center">
+    <h1 style="color:red">FLIGHT BOOKING FORM!</h1>
+    <h3>Start Your Journey Here!!!</h3>
+  </div>
+  <br />
+  <form
+    #f="ngForm"
+    name="form"
+    (ngSubmit)="addFlight()"
+    class="row g-12"
+    novalidate
+  >
+    <div class="col-12" style="text-align:center">
+      <b> <label for="firstname" required>First Name*</label>&nbsp;</b>
+
+      <!--  <input type="text" name="firstname" class="form-control" ngModel> -->
+      <!-- <input #name ="ngModel" required minlength="2" maxlength="7" type="text" name="firstname" class="form-control" ngmodel>
+        <div *ngIf="name.touched && name.invalid" class="alert alert-danger"> -->
+      <!-- <p *ngIf="name.errors.required">FirstName Required!!</p>
+        <p *ngIf="name.errors.minlength">Sorry! Short FirstName</p> -->
+      <input
+        type="text"
+        id="firstname"
+        name="firstname"
+        [(ngModel)]="model.firstname"
+      />
+      <!-- </div> -->
+    </div>
+
+    <br />
+    <br />
+
+    <div class="col-12" style="text-align:center">
+      <b> <label for="lastname">Last Name*</label>&nbsp;</b>
+
+      <input
+        type="text"
+        id="lastname"
+        name="lastname"
+        [(ngModel)]="model.lastname"
+      />
+    </div>
+    <br />
+    <br />
+    <div class="col-12" style="text-align:center">
+      <b><label for="email">Email id*</label>&nbsp;</b>
+      <!-- <input type="email" id="email" name="email" placeholder="Enter a valid email address"/> <br/>   -->
+
+      <input
+        type="email"
+        id="email"
+        name="email"
+        [(ngModel)]="model.email"
+        required="true"
+        placeholder="Enter a valid email address"
+      />
+    </div>
+    <br />
+    <br />
+    <div class="col-12" style="text-align:center">
+      <b><label for="dob">Date Of Birth</label>&nbsp;</b>
+      <input type="date" id="dob" name="dob" [(ngModel)]="model.dob" />
+    </div>
+    <br />
+    <br />
+    <div class="col-12" style="text-align:center">
+      <b><label for="gender">Gender</label>&nbsp;</b>
+      <label for="male">Male</label>&nbsp;
+      <input
+        type="radio"
+        id="gender"
+        name="gender"
+        value="male"
+        [(ngModel)]="model.gender"
+      />
+      &nbsp;
+      <label for="male">Female</label>&nbsp;
+      <input
+        type="radio"
+        id="gender"
+        name="gender"
+        value="female"
+        [(ngModel)]="model.gender"
+      />
+      &nbsp;
+      <label for="other">Other</label>&nbsp;
+      <input
+        type="radio"
+        id="gender"
+        name="gender"
+        value="other"
+        [(ngModel)]="model.gender"
+      />
+    </div>
+    <br />
+    <br />
+    <div class="col-12" style="text-align:center">
+      <b> <label for="departuredate">Depature Date</label>&nbsp;</b>
+      <input
+        type="date"
+        id="departuredate"
+        name="departuredate"
+        [(ngModel)]="model.departuredate"
+      />
+    </div>
+    <br />
+    <br />
+    <div class="col-12" style="text-align:center">
+      <b> <label for="destinationdate">Destination Date</label>&nbsp;</b>
+      <input
+        type="date"
+        id="destinationdate"
+        name="destinationdate"
+        [(ngModel)]="model.destinationdate"
+      />
+    </div>
+    <br />
+    <br />
+    <div class="col-12" style="text-align:center">
+      <b><label for="locations">Locations</label>&nbsp;</b>
+      <select name="locations" id="locations" [(ngModel)]="model.locations">
+        <option value="SINGAPORE">SINGAPORE</option>
+        <option value="MALAYSIA">MALAYSIA</option>
+        <option value="AUSTRALIA">AUSTRALIA</option>
+        <option value="GERMANY">GERMANY</option>
+        <option value="LONDON">LONDON</option>
+      </select>
+    </div>
+    <br />
+    <br />
+    <div class="col-12" style="text-align:center">
+      <b> <label for="insurancepolicies">Insurance Policies</label></b>
+    </div>
+    <div class="col-12" style="text-align:center">
+      <input
+        type="radio"
+        id="insurancepolicies"
+        name="insurancepolicies"
+        value="Domestic_Insurance"
+        [(ngModel)]="model.insurancepolicies"
+      />
+      &nbsp;<label for="insurancepolicies"> Domestic Insurance</label><br />
+      <input
+        type="radio"
+        id="insurancepolicies"
+        name="insurancepolicies"
+        value="International_Insurance"
+        [(ngModel)]="model.insurancepolicies"
+      />
+      &nbsp;<label for="insurancepolicies"> International Insurance</label
+      ><br />
+      <input
+        type="radio"
+        id="insurancepolicies"
+        name="insurancepolicies"
+        value="Family_Insurance"
+        [(ngModel)]="model.insurancepolicies"
+      />
+      &nbsp;<label for="insurancepolicies"> Family Insurance</label><br />
+      <input
+        type="radio"
+        id="insurancepolicies"
+        name="insurancepolicies"
+        value="Student_Insurance"
+        [(ngModel)]="model.insurancepolicies"
+      />
+      &nbsp;<label for="studentinsurance"> Student Insurance</label><br />
+    </div>
+    <br />
+    <br />
+    <br>
+    <br>
+    <div class="col-12" style="text-align:center">
+      <input type="submit" class="btn btn-success" value="save" /> &nbsp; &nbsp;
+      <input type="Reset" class="btn btn-success" value="Reset"/>
+    </div>
+    <div style="color-red" class="col-12" style="text-align:right">
+    <b><u>formoredetails</u></b><br>
+    <b><u>archu@gmail.com</u></b><br>
+    <b><u>directflights</u></b>
+  </div>
+    <b style="color-red">INSURANCE PLANS</b>
+    <p>
+      Travel insurance is a plan you purchase that protects you from certain
+      financial risks and losses that can occur while traveling. These losses
+      can be minor, like a delayed suitcase, or significant, like a last-minute
+      trip cancellation or a medical emergency overseas. In addition to
+      financial protection, the other huge benefit of travel insurance is access
+      to assistance services, wherever you are in the world. Our elite team of
+      travel and medical experts can arrange medical treatment in an emergency,
+      monitor your care, serve as interpreters, help you replace lost passports
+      and so much more. Sometimes, they even save travelers’ lives.
+    </p>
+    <video width="150" height="150" controls>
+      <source src="https://youtu.be/yAw-KcWDclE.mp4" type="video/mp4" />
+      <source src="https://youtu.be/yAw-KcWDclE.ogg" type="video/ogg" />
+      Insurance Plans
+    </video>
+   
+  </form>
+  <!-- style=" width: 50vw; margin-left : 25vw;" -->
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>FIRST NAME</th>
+        <th>LAST NAME</th>
+        <th>EMAIL ID</th>
+        <th>DOB</th>
+        <th>GENDER</th>
+        <th>DEPARTURE DATE</th>
+        <th>DESTINATION DATE</th>
+        <th>LOCATIONS</th>
+        <th>INSURANCE POLICIES</th>
+        <th>EDIT</th>
+        <th>DELETE</th>
+      </tr>
+    </thead>
+    <!-- tbody -->
+    <tbody>
+      <tr *ngFor="let flight of flights">
+        <td>{{ flight.id }}</td>
+        <td>{{ flight.firstname }}</td>
+        <td>{{ flight.lastname }}</td>
+        <td>{{ flight.email }}</td>
+        <td>{{ flight.dob }}</td>
+        <td>{{ flight.gender }}</td>
+        <td>{{ flight.departuredate }}</td>
+        <td>{{ flight.destinationdate }}</td>
+        <td>{{ flight.locations }}</td>
+        <td>{{ flight.insurancepolicies }}</td>
+        <td><button (click)="editFlight(flight.id)">edit</button></td>
+        <td><button (click)="deleteFlight(flight.id)">delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+</body>

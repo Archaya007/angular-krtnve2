@@ -1,0 +1,105 @@
+{{ model | json }}
+<div class="header" style="text-align:center">
+  <h1 style="color:red">BILL</h1>
+</div>
+<br/>
+<form #f="ngForm" name="form" (ngSubmit)="addproduct()" class="row g-12">
+  <div>
+    <div class="col-12">
+      <label for="name">Product Name</label>&nbsp;
+      <input
+        type="text"
+        id="name"
+        name="product_name"
+        [(ngModel)]="model.product_name"
+      />
+    </div>
+    <br />
+    <div class="col-12">
+      <label for="Brand_Name">Brand Name</label>&nbsp;
+      <input
+        type="text"
+        id="brand_Name"
+        name="brand_Name"
+        [(ngModel)]="model.brand_Namee"
+      />
+    </div>
+    <br />
+    <div class="col-12">
+      <label for="product_id">Product Code</label>&nbsp;
+      <input
+        type="product_id"
+        id="product_id"
+        name="product_id"
+        [(ngModel)]="model.product_id"
+      />
+    </div>
+    <br />
+    <div class="col-12">
+      <label for="Date">Date</label>&nbsp;
+      <input type="date" id="Date" name="Date" [(ngModel)]="model.Date" />
+    </div>
+    <br />
+    <div class="col-12">
+      <label for="Date">Payment Code</label>&nbsp;
+      <br />
+      <br />
+      <label for="Cash">Cash</label>&nbsp;
+      <input
+        type="radio"
+        id="Payment_Mode"
+        name="Payment_Mode"
+        value="cash"
+        [(ngModel)]="model.Payment_Mode"
+      />
+      &nbsp;
+      <label for="Card">Card</label>&nbsp;
+      <input
+        type="radio"
+        id="Payment_Mode"
+        name="Payment_Mode"
+        value="Card"
+        [(ngModel)]="model.Payment_Mode"
+      />
+      &nbsp;
+      <label for="Online">Online</label>&nbsp;
+      <input
+        type="radio"
+        id="Payment_Moder"
+        name="Payment_Mode"
+        value="Online"
+        [(ngModel)]="model.Payment_Mode"
+      />
+    </div>
+    <br />
+    <input type="submit" class="btn btn-success" value="insert" />
+  </div>
+</form>
+<!-- style=" width: 50vw; margin-left : 25vw;" -->
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Product Name</th>
+      <th>Brand NAME</th>
+      <th>Price</th>
+      <th>Date</th>
+      <th>Payment Mode</th>
+      <th>EDIT</th>
+      <th>DELETE</th>
+    </tr>
+  </thead>
+  <!-- tbody -->
+  <tbody>
+    <tr *ngFor="let product of products">
+      <td>{{ product.id }}</td>
+      <td>{{ product.productname }}</td>
+      <td>{{ product.brandname }}</td>
+      <td>{{ product.productprice }}</td>
+      <td>{{ product.date }}</td>
+      <td>{{ product.paymentmode }}</td>
+      <td><button (click)="editStudent(student.id)">edit</button></td>
+      <td><button (click)="deleteStudent(student.id)">delete</button></td>
+    </tr>
+  </tbody>
+</table>
